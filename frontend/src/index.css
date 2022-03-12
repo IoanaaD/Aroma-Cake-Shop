@@ -5,3 +5,17 @@ main {
 .copyright {
   color: #49274a;
 }
+
+.nav-links-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.login-btn-container{
+  display: flex;
+}
+
+.login-btn-container i{
+  padding-right: 6px;
+}
