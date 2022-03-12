@@ -1,8 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import HomeScreen from '../src/screens/HomeScreen'
+import ProductScreen from "./screens/ProductScreen";
 
 const App = () => {
   return (
@@ -10,7 +12,10 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
-          <h2>this is the new content</h2>
+          <Routes>
+            <Route path='/' element={<HomeScreen />} exact />
+            <Route path='/product/:id' element={<ProductScreen />} />
+          </Routes>
         </Container>
       </main>
       <Footer />

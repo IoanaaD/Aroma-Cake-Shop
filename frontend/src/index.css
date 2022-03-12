@@ -1,5 +1,17 @@
+html {
+  --grey: #adadad;
+  --lightPurple: #83677B;
+  --purple: #64485C;
+  --garnet: #501B1D;
+  --darkGarnet: #2e1114;
+}
+
 main {
   min-height: 80vh;
+}
+
+.list-group-item h3{
+  color: var(--darkGarnet);
 }
 
 .copyright {
@@ -18,4 +30,28 @@ main {
 
 .login-btn-container i{
   padding-right: 6px;
+}
+
+.rating span{
+  margin: 0.1rem;
+}
+
+.addToCart-btn{
+  width:100%;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: var(--garnet);
+  border: var(--garnet);
+}
+
+.addToCart-btn:hover{
+  background-color: #B04656;
+}
+
+.navbar-light .navbar-nav .nav-link{
+  color: var(--darkGarnet);
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+  color:  #B04656;
 }
