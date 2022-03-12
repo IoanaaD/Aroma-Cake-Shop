@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <main>
         <Container>
-          <h2>this is the content</h2>
+          <h2>this is the new content</h2>
         </Container>
       </main>
       <Footer />
