@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs'
 
-const user = [
+const users = [
     {
         name: 'Admin user',
         email: 'admin@example.com',
