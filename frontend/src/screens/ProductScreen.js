@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {
     Row,
@@ -10,12 +10,20 @@ import {
     Form,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from '../products';
 import { useParams } from 'react-router';
+import axios from 'axios';
 
-const ProductScreen = ({ match }) => {
+const ProductScreen = ({ }) => {
     const params = useParams();
-    const product = products.find(p => p._id === params['id'])
+    const [product, setProduct] = useState({})
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`/api/products/${params['id']}`);
+            setProduct(data)
+        }
+        fetchProduct();
+    }, [params])
 
     const addToCartHandler = () => {
         console.log("added to cart")
@@ -39,6 +47,7 @@ const ProductScreen = ({ match }) => {
                             <Rating
                                 value={product.rating}
                                 text={`${product.numReviews} reviews`}
+                                color={'#83677B'}
                             />
                         </ListGroup.Item>
                         <ListGroup.Item>Price: ${product.price}</ListGroup.Item>

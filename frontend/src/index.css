@@ -10,6 +10,14 @@ main {
   min-height: 80vh;
 }
 
+a{
+  color: var(--garnet)
+}
+
+a:hover{
+  color: var(--lightPurple)
+}
+
 .list-group-item h3{
   color: var(--darkGarnet);
 }
@@ -45,7 +53,7 @@ main {
 }
 
 .addToCart-btn:hover{
-  background-color: #B04656;
+  background-color: var(--purple);
 }
 
 .navbar-light .navbar-nav .nav-link{
