@@ -50,9 +50,9 @@ const ProductScreen = ({ }) => {
                                 color={'#83677B'}
                             />
                         </ListGroup.Item>
-                        <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                        <ListGroup.Item>Price: {product.price} lei</ListGroup.Item>
                         <ListGroup.Item>
-                            Description: ${product.description}
+                            Description: {product.description}
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Button
