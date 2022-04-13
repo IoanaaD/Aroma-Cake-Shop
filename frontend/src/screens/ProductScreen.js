@@ -6,10 +6,8 @@ import {
     Col,
     Image,
     ListGroup,
-    Card,
     Button,
-    Form,
-    ListGroupItem,
+    Form
 } from "react-bootstrap";
 import Rating from "../components/Rating";
 import Message from '../components/Message'
@@ -18,7 +16,7 @@ import { useParams } from 'react-router';
 import { listProductDetails } from '../actions/productActions';
 
 const ProductScreen = ({ history }) => {
-    const [qty, setQty] = useState(0)
+    const [qty, setQty] = useState(1)
 
     const params = useParams();
     const dispatch = useDispatch();
@@ -77,7 +75,7 @@ const ProductScreen = ({ history }) => {
                                     <Button
                                         className="btn-block addToCart-btn"
                                         type="button"
-                                        disbled={product.countInStock === 0}
+                                        disbled={product.countInStock === 0 ? true : false}
                                     >
                                         Add to cart
                                     </Button>
@@ -85,42 +83,6 @@ const ProductScreen = ({ history }) => {
                             </ListGroup.Item>
                         </ListGroup>
                     </Col>
-
-                    {/* <Col md={3}>
-     <Card>
-         <ListGroup variant="flush">
-             <ListGroup.Item>
-                 <Row>
-                     <Col>Price:</Col>
-                     <Col>
-                         <strong>${product.price}</strong>
-                     </Col>
-                 </Row>
-             </ListGroup.Item>
-             <ListGroup.Item>
-                 <Row>
-                     <Col>Status:</Col>
-                     <Col>
-                         {product.countInStock > 0 ? "In stock" : "Out of stock"}
-                     </Col>
-                 </Row>
-             </ListGroup.Item>
-
-
-
-             <ListGroup.Item>
-                 <Button
-                     onClick={addToCartHandler}
-                     className="btn-block"
-                     type="button"
-                     disbled={product.countInStock === 0}
-                 >
-                     Add to cart
-                 </Button>
-             </ListGroup.Item>
-         </ListGroup>
-     </Card>
- </Col> */}
                 </Row>
             )}
 
