@@ -31,7 +31,6 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
     return await bcrypt.compare(enteredPassword, this.password)
 }
 
-//vrem sa criptam parola inainte sa salvam o modificare a parolei sau la register
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
         next()
